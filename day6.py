@@ -48,7 +48,7 @@ h1{
 # -----------------------------
 @st.cache_resource
 def load_model():
-    return tf.keras.models.load_model("model.kerasel.keras")      # Change to model.h5 if needed
+   return tf.keras.models.load_model("model.keras")    # Change to model.h5 if needed
 
 model = load_model()
 
