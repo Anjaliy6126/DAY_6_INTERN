@@ -39,9 +39,15 @@ html, body, [class*="css"]  {
     text-align: center;
 }
 
+.logo-icon{
+    font-size: 70px;
+    margin-bottom: 10px;
+    filter: drop-shadow(0 4px 10px rgba(0,0,0,0.4));
+}
+
 .header-card h1{
     color: #F8FAFC !important;
-    font-size: 38px;
+    font-size: 34px;
     font-weight: 800;
     margin: 0;
     text-shadow: 0 2px 8px rgba(0,0,0,0.3);
@@ -245,7 +251,8 @@ model = load_model()
 # -------------------- Header --------------------
 st.markdown("""
 <div class="header-card">
-    <h1>🩺 COVID-19 Detection</h1>
+    <div class="logo-icon">🩺</div>
+    <h1>COVID-19 Detection</h1>
     <p>AI-powered analysis of chest X-ray images to help identify potential COVID-19 indicators</p>
 </div>
 """, unsafe_allow_html=True)
