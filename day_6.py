@@ -20,7 +20,7 @@ html, body, [class*="css"]  {
 }
 
 .stApp{
-    background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 40%, #ffffff 100%);
+    background: linear-gradient(135deg, #0F172A 0%, #111827 50%, #0B1120 100%);
     background-attachment: fixed;
 }
 
@@ -30,32 +30,33 @@ html, body, [class*="css"]  {
 
 /* ---------- Header Card ---------- */
 .header-card{
-    background: #ffffff;
+    background: linear-gradient(135deg, #1E3A8A, #1D4ED8, #2563EB);
     padding: 30px 25px;
     border-radius: 20px;
-    box-shadow: 0 8px 24px rgba(37,99,235,0.18);
-    border: 2px solid #BFDBFE;
+    box-shadow: 0 8px 28px rgba(37,99,235,0.35);
+    border: 1px solid #3B82F6;
     margin-bottom: 25px;
     text-align: center;
 }
 
 .header-card h1{
-    color: #0F172A !important;
+    color: #F8FAFC !important;
     font-size: 38px;
     font-weight: 800;
     margin: 0;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.3);
 }
 
 .header-card p{
-    color: #1E293B !important;
+    color: #DBEAFE !important;
     font-size: 17px !important;
     margin-top: 10px;
-    font-weight: 500;
+    font-weight: 400;
 }
 
-/* ---------- Force all headings and text dark ---------- */
+/* ---------- Force all headings and text light ---------- */
 h1, h2, h3, h4, h5, h6{
-    color:#0F172A !important;
+    color:#F1F5F9 !important;
     font-weight: 700 !important;
 }
 
@@ -64,14 +65,14 @@ h3{
 }
 
 p, li, span, label, div{
-    color:#111827;
+    color:#E2E8F0;
 }
 
 /* Streamlit specific text elements */
 [data-testid="stMarkdownContainer"] p,
 [data-testid="stMarkdownContainer"] li,
 [data-testid="stMarkdownContainer"] span{
-    color:#111827 !important;
+    color:#E2E8F0 !important;
     font-size:17px;
 }
 
@@ -79,32 +80,44 @@ p, li, span, label, div{
 [data-testid="stFileUploader"] label,
 [data-testid="stFileUploaderDropzoneInstructions"] div,
 [data-testid="stFileUploaderDropzoneInstructions"] span{
-    color:#0F172A !important;
+    color:#F1F5F9 !important;
     font-weight: 600 !important;
 }
 
 [data-testid="stFileUploaderDropzoneInstructions"] small{
-    color:#374151 !important;
+    color:#CBD5E1 !important;
 }
 
 /* ---------- Upload box ---------- */
 [data-testid="stFileUploader"]{
-    background: white;
+    background: #1E293B;
     padding: 25px;
     border-radius: 18px;
     border: 2px dashed #3B82F6;
-    box-shadow: 0 6px 18px rgba(59,130,246,0.15);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.35);
     transition: all 0.3s ease;
 }
 
 [data-testid="stFileUploader"]:hover{
-    border-color: #1D4ED8;
-    box-shadow: 0 8px 24px rgba(59,130,246,0.25);
+    border-color: #60A5FA;
+    box-shadow: 0 8px 24px rgba(59,130,246,0.3);
+}
+
+/* Browse files button inside uploader */
+[data-testid="stFileUploader"] button{
+    background:#334155 !important;
+    color:#F1F5F9 !important;
+    border: 1px solid #475569 !important;
+    font-weight: 600 !important;
+}
+
+[data-testid="stFileUploader"] button:hover{
+    background:#475569 !important;
 }
 
 /* Uploaded file name text */
 [data-testid="stFileUploaderFileName"]{
-    color:#0F172A !important;
+    color:#F1F5F9 !important;
     font-weight: 600 !important;
 }
 
@@ -117,30 +130,30 @@ p, li, span, label, div{
 
 [data-testid="stImage"] img{
     border-radius: 16px;
-    box-shadow: 0 8px 24px rgba(0,0,0,0.15);
-    border: 4px solid white;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+    border: 4px solid #1E293B;
 }
 
 /* ---------- Button ---------- */
 .stButton>button{
     width:100%;
     background: linear-gradient(135deg, #2563EB, #1D4ED8);
-    color:white !important;
+    color:#F8FAFC !important;
     font-size:20px;
     font-weight:700;
     border-radius:14px;
     padding:14px;
     border:none;
-    box-shadow: 0 6px 16px rgba(37,99,235,0.4);
+    box-shadow: 0 6px 18px rgba(37,99,235,0.5);
     transition: all 0.25s ease;
     letter-spacing: 0.5px;
 }
 
 .stButton>button:hover{
-    background: linear-gradient(135deg, #1D4ED8, #1E3A8A);
+    background: linear-gradient(135deg, #3B82F6, #2563EB);
     transform: translateY(-2px);
-    box-shadow: 0 10px 22px rgba(29,78,216,0.5);
-    color:white !important;
+    box-shadow: 0 10px 24px rgba(59,130,246,0.6);
+    color:#F8FAFC !important;
 }
 
 .stButton>button:active{
@@ -149,29 +162,29 @@ p, li, span, label, div{
 
 /* ---------- Result boxes ---------- */
 .success-box{
-    background: linear-gradient(135deg, #DCFCE7, #BBF7D0);
+    background: linear-gradient(135deg, #14532D, #166534);
     padding:22px;
     border-radius:16px;
     font-size:24px;
     font-weight:800;
-    color:#166534 !important;
+    color:#DCFCE7 !important;
     text-align:center;
-    box-shadow: 0 8px 20px rgba(22,101,52,0.15);
-    border: 2px solid #86EFAC;
+    box-shadow: 0 8px 24px rgba(20,83,45,0.4);
+    border: 2px solid #22C55E;
     margin-top: 15px;
     animation: fadeIn 0.5s ease;
 }
 
 .error-box{
-    background: linear-gradient(135deg, #FEE2E2, #FECACA);
+    background: linear-gradient(135deg, #7F1D1D, #991B1B);
     padding:22px;
     border-radius:16px;
     font-size:24px;
     font-weight:800;
-    color:#B91C1C !important;
+    color:#FEE2E2 !important;
     text-align:center;
-    box-shadow: 0 8px 20px rgba(185,28,28,0.15);
-    border: 2px solid #FCA5A5;
+    box-shadow: 0 8px 24px rgba(127,29,29,0.4);
+    border: 2px solid #EF4444;
     margin-top: 15px;
     animation: fadeIn 0.5s ease;
 }
@@ -183,7 +196,7 @@ p, li, span, label, div{
 
 /* ---------- Progress bar ---------- */
 .stProgress > div > div{
-    background: linear-gradient(90deg, #3B82F6, #1D4ED8);
+    background: linear-gradient(90deg, #3B82F6, #60A5FA);
     border-radius: 10px;
 }
 
@@ -193,12 +206,12 @@ p, li, span, label, div{
 
 /* ---------- Disclaimer ---------- */
 .disclaimer{
-    background: #FEF9C3;
+    background: #422006;
     border-left: 5px solid #EAB308;
     padding: 14px 18px;
     border-radius: 10px;
     font-size: 14px !important;
-    color: #713F12 !important;
+    color: #FEF3C7 !important;
     font-weight: 600;
     margin-top: 20px;
 }
@@ -207,7 +220,7 @@ p, li, span, label, div{
 .footer{
     text-align:center;
     font-size:14px;
-    color:#1F2937 !important;
+    color:#94A3B8 !important;
     font-weight: 500;
     padding-top:25px;
     padding-bottom: 10px;
@@ -216,7 +229,7 @@ p, li, span, label, div{
 hr{
     margin-top: 30px;
     border: none;
-    border-top: 1px solid #CBD5E1;
+    border-top: 1px solid #334155;
 }
 
 </style>
