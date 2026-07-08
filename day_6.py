@@ -30,39 +30,61 @@ html, body, [class*="css"]  {
 
 /* ---------- Header Card ---------- */
 .header-card{
-    background: linear-gradient(135deg, #1E3A8A, #2563EB, #3B82F6);
-    padding: 35px 25px;
+    background: #ffffff;
+    padding: 30px 25px;
     border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(37,99,235,0.35);
+    box-shadow: 0 8px 24px rgba(37,99,235,0.18);
+    border: 2px solid #BFDBFE;
     margin-bottom: 25px;
     text-align: center;
 }
 
 .header-card h1{
-    color: white !important;
-    font-size: 40px;
+    color: #0F172A !important;
+    font-size: 38px;
     font-weight: 800;
     margin: 0;
-    text-shadow: 0 2px 6px rgba(0,0,0,0.2);
 }
 
 .header-card p{
-    color: #DBEAFE !important;
+    color: #1E293B !important;
     font-size: 17px !important;
-    margin-top: 8px;
-    font-weight: 400;
+    margin-top: 10px;
+    font-weight: 500;
 }
 
-/* ---------- Section subtitle ---------- */
+/* ---------- Force all headings and text dark ---------- */
+h1, h2, h3, h4, h5, h6{
+    color:#0F172A !important;
+    font-weight: 700 !important;
+}
+
 h3{
-    color:#1E3A8A;
-    font-weight: 700;
     text-align: center;
 }
 
-p, li{
+p, li, span, label, div{
+    color:#111827;
+}
+
+/* Streamlit specific text elements */
+[data-testid="stMarkdownContainer"] p,
+[data-testid="stMarkdownContainer"] li,
+[data-testid="stMarkdownContainer"] span{
     color:#111827 !important;
     font-size:17px;
+}
+
+/* File uploader label + instructions */
+[data-testid="stFileUploader"] label,
+[data-testid="stFileUploaderDropzoneInstructions"] div,
+[data-testid="stFileUploaderDropzoneInstructions"] span{
+    color:#0F172A !important;
+    font-weight: 600 !important;
+}
+
+[data-testid="stFileUploaderDropzoneInstructions"] small{
+    color:#374151 !important;
 }
 
 /* ---------- Upload box ---------- */
@@ -78,6 +100,12 @@ p, li{
 [data-testid="stFileUploader"]:hover{
     border-color: #1D4ED8;
     box-shadow: 0 8px 24px rgba(59,130,246,0.25);
+}
+
+/* Uploaded file name text */
+[data-testid="stFileUploaderFileName"]{
+    color:#0F172A !important;
+    font-weight: 600 !important;
 }
 
 /* ---------- Image preview card ---------- */
@@ -97,7 +125,7 @@ p, li{
 .stButton>button{
     width:100%;
     background: linear-gradient(135deg, #2563EB, #1D4ED8);
-    color:white;
+    color:white !important;
     font-size:20px;
     font-weight:700;
     border-radius:14px;
@@ -112,7 +140,7 @@ p, li{
     background: linear-gradient(135deg, #1D4ED8, #1E3A8A);
     transform: translateY(-2px);
     box-shadow: 0 10px 22px rgba(29,78,216,0.5);
-    color:white;
+    color:white !important;
 }
 
 .stButton>button:active{
@@ -126,7 +154,7 @@ p, li{
     border-radius:16px;
     font-size:24px;
     font-weight:800;
-    color:#166534;
+    color:#166534 !important;
     text-align:center;
     box-shadow: 0 8px 20px rgba(22,101,52,0.15);
     border: 2px solid #86EFAC;
@@ -140,7 +168,7 @@ p, li{
     border-radius:16px;
     font-size:24px;
     font-weight:800;
-    color:#B91C1C;
+    color:#B91C1C !important;
     text-align:center;
     box-shadow: 0 8px 20px rgba(185,28,28,0.15);
     border: 2px solid #FCA5A5;
@@ -171,6 +199,7 @@ p, li{
     border-radius: 10px;
     font-size: 14px !important;
     color: #713F12 !important;
+    font-weight: 600;
     margin-top: 20px;
 }
 
@@ -178,7 +207,8 @@ p, li{
 .footer{
     text-align:center;
     font-size:14px;
-    color:#374151;
+    color:#1F2937 !important;
+    font-weight: 500;
     padding-top:25px;
     padding-bottom: 10px;
 }
@@ -207,7 +237,7 @@ st.markdown("""
 </div>
 """, unsafe_allow_html=True)
 
-st.write("### 📤 Upload a Chest X-Ray Image")
+st.markdown("### 📤 Upload a Chest X-Ray Image")
 
 uploaded_file = st.file_uploader(
     "Choose an Image (JPG, JPEG, PNG)",
